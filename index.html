@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Profil Alifia Zahra Indana</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .card {
+        width: 420px;
+        background: rgba(255,255,255,0.08);
+        backdrop-filter: blur(12px);
+        border-radius: 20px;
+        padding: 25px;
+        color: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        animation: fade 1s ease;
+    }
+
+    @keyframes fade {
+        from {transform: scale(0.8); opacity: 0;}
+        to {transform: scale(1); opacity: 1;}
+    }
+
+    .photo {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+        display: block;
+        margin: auto;
+    }
+
+    input { display: none; }
+
+    label {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        padding: 6px 12px;
+        background: #00c6ff;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 12px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .story {
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .highlight {
+        color: #00c6ff;
+        font-weight: bold;
+    }
+
+    .footer {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 12px;
+        opacity: 0.7;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- FOTO -->
+    <img id="preview" class="photo"
+    src="https://i.imgur.com/8Km9tLL.png">
+
+    <!-- UPLOAD -->
+    <input type="file" id="file" accept="image/*">
+    <label for="file">📷 Ganti Foto</label>
+
+    <h2>Alifia Zahra Indana</h2>
+
+    <div class="story">
+        Halo, nama saya <span class="highlight">Alifia Zahra Indana</span>, 
+        seorang pelajar dari <span class="highlight">SMKN 4 Padalarang</span> 
+        yang sekarang duduk di kelas <span class="highlight">11 ACP</span>.
+
+        <br><br>
+
+        Saya lahir di <span class="highlight">Bandung Barat</span> pada 
+        tanggal <span class="highlight">15 Januari 2008</span>. Sejak kecil, 
+        saya suka aktivitas yang aktif dan menyenangkan, terutama 
+        <span class="highlight">bermain badminton</span>.
+
+        <br><br>
+
+        Dalam kehidupan sehari-hari, saya sangat menyukai makanan 
+        pedas seperti <span class="highlight">seblak</span>. Selain itu, 
+        saya juga suka buah segar seperti <span class="highlight">stroberi</span> 
+        dan <span class="highlight">alpukat</span>.
+
+        <br><br>
+
+        Saya orang yang sederhana, suka belajar hal baru, dan menikmati 
+        kegiatan yang membuat saya berkembang.
+    </div>
+
+    <div class="footer">
+        ✨ Biodata Cerita Digital ✨
+    </div>
+
+</div>
+
+<!-- SCRIPT FOTO -->
+<script>
+    const file = document.getElementById("file");
+    const preview = document.getElementById("preview");
+
+    file.addEventListener("change", function () {
+        const reader = new FileReader();
+        reader.onload = function () {
+            preview.src = reader.result;
+        }
+        reader.readAsDataURL(file.files[0]);
+    });
+</script>
+
+</body>
+</html>
